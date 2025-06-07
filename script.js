@@ -4,7 +4,7 @@ const fecha = document.getElementById('fechaClase');
 const horarioSelect = document.getElementById('horario');
 const respuesta = document.getElementById('respuesta');
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz5ZcOfe3FiDtMzohhweD1JPrD0jfBw8qmV9bnq2Tb8SyL1Fxpcif5iJHnHqjoQge4/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwUHprF07ex0ssvbQ1f5boDlq50dR43sPgSjJ2KoG09H_coiMA2ilJSVqdog0EQs3H2/exec";
 
 async function cargarHorarios() {
   if (!tipo.value || !fecha.value) return;
