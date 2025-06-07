@@ -1,0 +1,37 @@
+const form = document.getElementById('formulario');
+const tipo = document.getElementById('tipo');
+const fecha = document.getElementById('fechaClase');
+const horarioSelect = document.getElementById('horario');
+const respuesta = document.getElementById('respuesta');
+
+// ⚠️ Reemplaza esta URL por la tuya de Apps Script
+const SCRIPT_URL = "TU_URL_DEL_SCRIPT";
+
+async function cargarHorarios() {
+  if (!tipo.value || !fecha.value) return;
+
+  const res = await fetch(`${SCRIPT_URL}?tipo=${tipo.value}&fecha=${fecha.value}`);
+  const horariosDisponibles = await res.json();
+
+  horarioSelect.innerHTML = '<option value="">Selecciona un horario</option>';
+  horariosDisponibles.forEach(h => {
+    const option = document.createElement('option');
+    option.value = h;
+    option.textContent = h;
+    horarioSelect.appendChild(option);
+  });
+}
+
+tipo.addEventListener('change', cargarHorarios);
+fecha.addEventListener('change', cargarHorarios);
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const formData = new FormData(form);
+  const res = await fetch(SCRIPT_URL, {
+    method: "POST",
+    body: formData
+  });
+  const texto = await res.text();
+  respuesta.textContent = texto;
+});

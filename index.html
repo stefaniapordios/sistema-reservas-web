@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reservas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h2>Reserva tu espacio</h2>
+
+  <form id="formulario">
+    <label>Nombre completo:</label>
+    <input type="text" name="nombre" required>
+
+    <label>Correo electrónico:</label>
+    <input type="email" name="email" required>
+
+    <label>Celular:</label>
+    <input type="tel" name="celular" required>
+
+    <label>Tipo de reserva:</label>
+    <select name="tipo" id="tipo" required>
+      <option value="">Selecciona...</option>
+      <option value="Clase guiada">Clase guiada</option>
+      <option value="Uso del espacio">Uso del espacio</option>
+    </select>
+
+    <label>Fecha:</label>
+    <input type="date" name="fechaClase" id="fechaClase" required>
+
+    <label>Horario disponible:</label>
+    <select name="horario" id="horario" required>
+      <option value="">Selecciona un horario</option>
+    </select>
+
+    <button type="submit">Enviar reserva</button>
+  </form>
+
+  <p id="respuesta"></p>
+
+  <script src="script.js"></script>
+</body>
+</html>
