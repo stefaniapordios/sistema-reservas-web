@@ -5,7 +5,7 @@ const horarioSelect = document.getElementById('horario');
 const respuesta = document.getElementById('respuesta');
 
 // ⚠️ Reemplaza esta URL por la tuya de Apps Script
-const SCRIPT_URL = "TU_URL_DEL_SCRIPT";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz5ZcOfe3FiDtMzohhweD1JPrD0jfBw8qmV9bnq2Tb8SyL1Fxpcif5iJHnHqjoQge4/exec";
 
 async function cargarHorarios() {
   if (!tipo.value || !fecha.value) return;
